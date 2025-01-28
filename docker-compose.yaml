@@ -1,0 +1,38 @@
+services:
+  svr_n8n:
+    #image: n8nio/n8n:1.71.3
+    image: docker.n8n.io/n8nio/n8n
+    restart: always
+    container_name: cont_n8n
+    environment:
+      - N8N_SECURE_COOKIE=false
+      - GENERIC_TIMEZONE=Asia/Ho_Chi_Minh
+      - N8N_EDITOR_BASE_URL=${EXTERNAL_IP}
+      - WEBHOOK_URL=${EXTERNAL_IP}
+    ports:
+      - "80:5678"
+    networks:
+      - n8n-network
+    volumes:
+      - /root/vol_n8n:/home/node/.n8n
+  ngrok:
+    container_name: ngrok
+    image: ngrok/ngrok:latest
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_TOKEN}
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    networks:
+      - n8n-network
+    volumes:
+      - ./ngrok.yml:/etc/ngrok.yml
+
+volumes:
+  n8n_data:
+
+networks:
+  n8n-network:
+    driver: bridge
