@@ -1,7 +1,7 @@
 version: 2
-log_level: debug
+log_level: error
 tunnels:
     n8n:
         proto: http
         addr: n8n:5678
-        domain: koi-lasting-evenly.ngrok-free.app
+        domain: xxx-lasting-evenly.ngrok-free.app
