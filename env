@@ -1,3 +1,4 @@
 TIMEZONE=Asia/Ho_Chi_Minh
-NGROK_TOKEN=xxxxxxxxxxxxxxxxxxxx
-EXTERNAL_IP=https://xxxxxxx.ngrok-free.app
+NGROK_TOKEN=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+EXTERNAL_IP=https://xxx-lasting-evenly.ngrok-free.app
+#EXTERNAL_IP=http://192.168.1.234
