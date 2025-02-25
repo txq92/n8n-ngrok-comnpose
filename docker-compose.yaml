@@ -14,8 +14,9 @@ services:
     networks:
       - n8n-network
     volumes:
-      #- ./vol_n8n:/home/node/.n8n
-      - n8n_data:/home/node/.n8n
+      - ./vol_n8n:/home/node/.n8n
+      #- n8n_data:/home/node/.n8n
+
   ngrok:
     container_name: ngrok
     image: ngrok/ngrok:latest
